@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 using Nancy;
 
@@ -14,7 +15,11 @@ namespace BugIsolation
         {
             Get["/"] = parameters =>
                 {
-                    return View["test"];
+                    return View["index"];
+                };
+            Get["/{FileName}"] = parameters =>
+                {
+                    return View[parameters.FileName];
                 };
         }
     }

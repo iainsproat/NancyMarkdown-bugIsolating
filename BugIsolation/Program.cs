@@ -14,9 +14,11 @@ namespace BugIsolation
         {
             using (var host = new NancyHost(new Uri(@"http://localhost:62259")))
             {
+                Console.WriteLine("Starting Nancy Self hosting...");
                 host.Start();
                 Console.ReadKey();
             }
+            Console.WriteLine("exiting...");
         }
     }
 }
